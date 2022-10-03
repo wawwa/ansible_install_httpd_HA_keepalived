@@ -1,0 +1,11 @@
+---
+# tasks file for httpd
+  - name: "Install Httpd"
+    apt: name=apache2 update_cache=yes state=latest
+
+  - name: Copy MyHomePage to Servers
+    template: src=index.j2  dest={{ destin_file }}/index.html
+    notify: Restart Apache
+
+  - name: Start httpd Web Servers
+    service: name=apache2 state=started enabled=yes

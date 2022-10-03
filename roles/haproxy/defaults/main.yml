@@ -1,0 +1,3 @@
+---
+# defaults file for httpd
+destin_file: /etc/haproxy

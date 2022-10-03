@@ -1,0 +1,12 @@
+---
+# tasks file for haproxy
+  - name: "Install HAProxy"
+    apt: name=haproxy state=present update_cache=yes
+
+  - name: Configure HAProxy
+    copy: src=haproxy.cfg  dest={{ destin_file }}
+    notify: Restart haproxy
+
+  - name: Start haproxy
+    service: name=haproxy state=started enabled=yes
+    ignore_errors: yes

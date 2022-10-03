@@ -1,0 +1,17 @@
+---
+
+
+- name: Install HAProxy
+  hosts: loadbalancers
+  become: yes
+
+
+  roles:
+    - haproxy
+
+
+
+
+
+
+

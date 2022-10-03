@@ -1,0 +1,18 @@
+---
+# tasks file for keepalived
+  - name: "Install kepalived"
+    apt: name=keepalived update_cache=yes state=latest
+
+  - name: Configure keepalived MASTER
+    copy: src=keepalivedMASTER.conf dest={{ destin_file }}/keepalived.conf
+    when: ansible_hostname=="ha1"
+
+  - name: Configure keepalived BACKUP
+    copy: src=keepalivedBACKUP.conf dest={{ destin_file }}/keepalived.conf
+    when: ansible_hostname=="ha2"
+
+
+
+
+  - name: Start keepalived
+    service: name=keepalived state=started enabled=yes

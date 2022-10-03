@@ -1,0 +1,13 @@
+---
+
+
+- name: Install Httpd web server
+  hosts: webservers
+  become: yes
+
+  roles:
+    - httpd
+
+
+
+

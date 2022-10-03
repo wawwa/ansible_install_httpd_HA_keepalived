@@ -1,0 +1,13 @@
+---
+
+
+- name: Install keepalived
+  hosts: loadbalancers
+  become: yes
+
+
+  roles:
+    - keepalived
+
+
+
