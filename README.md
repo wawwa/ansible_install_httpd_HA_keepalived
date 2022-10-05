@@ -1,4 +1,4 @@
-# ansible install and configure httpd, HAProxy, keepalived
+# Ansible. Install and configure httpd, HAProxy, keepalived
 PING ALL
 
 
